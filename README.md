@@ -18,6 +18,7 @@ Training Large Language Models (LLMs) from scratch requires extensive data and c
 
 
 **3. Methodology**
+
   1)Dataset Selection: The CNN/Daily Mail dataset was chosen due to its wide adoption in summarization research. It consists of ~300,000 news articles and 
     corresponding human-written summaries, making it an ideal dataset for training a text summarization model.
 
