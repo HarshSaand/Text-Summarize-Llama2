@@ -19,10 +19,10 @@ Training Large Language Models (LLMs) from scratch requires extensive data and c
 
 **3. Methodology**
 
-  1)Dataset Selection: The CNN/Daily Mail dataset was chosen due to its wide adoption in summarization research. It consists of ~300,000 news articles and 
+  1. Dataset Selection: The CNN/Daily Mail dataset was chosen due to its wide adoption in summarization research. It consists of ~300,000 news articles and 
     corresponding human-written summaries, making it an ideal dataset for training a text summarization model.
 
-  2)Preprocessing: Before training, the dataset underwent preprocessing, which included:
+  2. Preprocessing: Before training, the dataset underwent preprocessing, which included:
 
      - Tokenization using the Hugging Face transformers library.
 
@@ -32,7 +32,7 @@ Training Large Language Models (LLMs) from scratch requires extensive data and c
 
      - Filtering out articles shorter than 50 words and summaries shorter than 20 words to ensure meaningful training samples.
 
-   3) Fine-Tuning the Model: Instead of training Llama-2 from scratch, we applied transfer learning. The pre-trained model was fine-tuned using supervised 
+   3. Fine-Tuning the Model: Instead of training Llama-2 from scratch, we applied transfer learning. The pre-trained model was fine-tuned using supervised 
        learning techniques. The training process involved:
 
        -  Supervised Learning: The model was trained using a cross-entropy loss function to minimize the difference between predicted and actual summaries.
@@ -51,21 +51,21 @@ Training Large Language Models (LLMs) from scratch requires extensive data and c
               
              - Number of Epochs: 5 (early stopping applied if no improvement in validation loss after 2 epochs)
 
-  4) Evaluation Metrics: The effectiveness of the fine-tuned model was measured using:
+  4. Evaluation Metrics: The effectiveness of the fine-tuned model was measured using:
 
-      - ROUGE-1, ROUGE-2, and ROUGE-L scores: Assessing word overlap between generated and reference summaries.
-      
-      - BLEU Score: Measuring the precision of generated summaries based on n-grams.
-      
-      - Inference Speed: Evaluating real-time usability by measuring summarization time per input.
+          - ROUGE-1, ROUGE-2, and ROUGE-L scores: Assessing word overlap between generated and reference summaries.
+          
+          - BLEU Score: Measuring the precision of generated summaries based on n-grams.
+          
+          - Inference Speed: Evaluating real-time usability by measuring summarization time per input.
 
-5) Benchmarking: Our fine-tuned model was compared against existing summarization frameworks such as BART, PEGASUS, and T5. Results indicated that Llama-2 achieved:
-
-        - ROUGE-1: 44.8 (vs. 44.2 for BART, 45.1 for PEGASUS, 43.7 for T5)
-        
-        - ROUGE-2: 21.7 (vs. 21.4 for BART, 22.0 for PEGASUS, 20.8 for T5)
-        
-        - ROUGE-L: 41.5 (vs. 40.9 for BART, 42.3 for PEGASUS, 40.1 for T5)
+  5. Benchmarking: Our fine-tuned model was compared against existing summarization frameworks such as BART, PEGASUS, and T5. Results indicated that Llama-2 achieved:
+  
+          - ROUGE-1: 44.8 (vs. 44.2 for BART, 45.1 for PEGASUS, 43.7 for T5)
+          
+          - ROUGE-2: 21.7 (vs. 21.4 for BART, 22.0 for PEGASUS, 20.8 for T5)
+          
+          - ROUGE-L: 41.5 (vs. 40.9 for BART, 42.3 for PEGASUS, 40.1 for T5)
 
 ![image](https://github.com/LastAirbender07/Text-Summarization-Llama-2/assets/101379967/f9ff888b-72c5-4d5f-9804-02afd90373e5)
 Fig 1-Block Diagram
