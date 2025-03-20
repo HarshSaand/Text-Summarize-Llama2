@@ -108,8 +108,8 @@ Fig 8-Testing on Base Llama-2 Model
 ![image](https://github.com/LastAirbender07/Text-Summarization-Llama-2/assets/101379967/5e95ced0-9536-4220-9a84-9ef9527446be)
 Fig 9-Testing on Fine-tuned Llama-2 Model
 
-
 #####
-##**5. Contributions:**
+ **5. Conclusion**
+ 
 Contributions are welcome! If you have suggestions, improvements, or issues to report, feel free to raise an issue or submit a pull request. Collaboration will help refine and expand the capabilities of this project.
 
