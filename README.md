@@ -7,6 +7,86 @@ Training Large Language Models (LLMs) from scratch requires extensive data and c
 
 *Keywords*: text summarization, large language models (LLMs), fine-tuning, CNN/Daily Mail dataset, email summarization, letter summarization, news article summarization
 
+---
+
+## 🔧 Prerequisites
+Ensure you have the following installed before running the project:
+- Python 3.8+
+- pip (Python package manager)
+- Git (for cloning the repository)
+- A **GPU (recommended)** for faster inference
+
+---
+
+## ⚙️ Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/HarshSaand/Text-Summarize-Llama2.git
+   cd Text-Summarize-Llama2
+   ```
+
+2. Install the required dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. Download the pre-trained **LLaMA 2** model from Hugging Face:
+   ```sh
+   from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+   model_name = "meta-llama/Llama-2-7b"
+   tokenizer = AutoTokenizer.from_pretrained(model_name)
+   model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+   ```
+
+---
+
+##  Usage
+
+### **Basic Summarization**
+Run the summarization model using a Python script:
+
+```python
+from transformers import pipeline
+
+summarizer = pipeline("summarization", model="meta-llama/Llama-2-7b")
+
+text = """Your long-form text goes here. The model will analyze and return a concise summary."""
+summary = summarizer(text, max_length=150, min_length=50, do_sample=False)
+
+print(summary[0]['summary_text'])
+```
+
+### **Running as an API (FastAPI)**
+You can deploy the model as a REST API using **FastAPI**:
+
+```sh
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Once running, you can make requests to:
+```
+http://localhost:8000/summarize
+```
+
+---
+
+## 📂 Project Structure
+
+```
+Text-Summarize-Llama2/
+│── models/                  # Pre-trained model files
+│── data/                    # Sample datasets for testing
+│── app.py                    # FastAPI backend server
+│── main.py                   # Main script for summarization
+│── requirements.txt          # Required dependencies
+│── README.md                 # Project documentation
+└── LearnWithPrompts.md       # Guide to prompt engineering
+```
+
+---
+
  **Key Features** 
   - Fine-tuned Llama-2 model capable of summarizing emails, letters, and news articles with high accuracy.
 
